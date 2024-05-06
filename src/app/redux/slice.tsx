@@ -24,8 +24,14 @@ const Slice = createSlice({
       };
       state.users.push(data);
     },
+    removeUser: (state, action) => {
+      const data = state.users.filter((item) => {
+        return item.id !== action.payload;
+      });
+      state.users = data;
+    },
   },
 });
 
-export const { addUser } = Slice.actions;
+export const { addUser, removeUser } = Slice.actions;
 export default Slice.reducer;
