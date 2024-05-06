@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUser } from "../redux/slice";
+import Link from "next/link";
 
 export default function AddUsers() {
   const [name, setName] = useState("");
@@ -26,12 +27,20 @@ export default function AddUsers() {
         onChange={handleInputChange}
         className="w-[250px] h-[35px] border-[2px] border-[#FF70AB] p-[10px] bg-transparent mt-[10px] rounded-[10px] "
       />
-      <button
-        onClick={userDispatch}
-        className="border-[2px] p-[5px] border-[#F97300] bg-[#F97300] ml-[10px] rounded-[10px] text-[white] "
-      >
-        Add User
-      </button>
+      <div className="mt-[10px] ">
+        <button
+          onClick={userDispatch}
+          className="border-[2px] p-[5px] border-[#F97300] bg-[#F97300] ml-[10px] rounded-[10px] text-[white] "
+        >
+          Add User
+        </button>
+        <Link
+          href="/removeUser"
+          className="border-[4px] p-[5px] border-[#F97300] bg-[#F97300] ml-[10px] rounded-[10px] text-[white] underline "
+        >
+          Remove User
+        </Link>
+      </div>
     </div>
   );
 }

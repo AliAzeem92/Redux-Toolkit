@@ -20,14 +20,8 @@ export default function DisplayUsers() {
         }}
       >
         {userData.map((item: any) => (
-          <div className="bg-[#32012F] rounded-[10px] p-[10px] mb-[10px] flex justify-between ">
+          <div className="bg-[#32012F] rounded-[10px] p-[10px] mb-[10px]">
             <span>{item.name}</span>
-            <button
-              onClick={() => dispatch(removeUser(item.id))}
-              className="text-[#F97300] underline "
-            >
-              Remove User
-            </button>
           </div>
         ))}
       </div>
